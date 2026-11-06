@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | PIMSCO AI{% endblock %}
+{% block content %}
+<section class="dashboard-wrap">
+  <div class="dashboard-head"><div><p class="eyebrow">PIMSCO AI WORKSPACE</p><h1>Welcome back</h1><p class="muted">Signed in as {{ user['mobile'] }}</p></div><form method="post" action="{{ url_for('logout') }}"><button class="ghost-button" type="submit">Sign out</button></form></div>
+  <div class="dashboard-banner"><div class="mini-logo">P</div><div><span class="eyebrow">YOUR WORKSPACE</span><h2>Good to see you.</h2><p>This is your local PIMSCO AI demo dashboard.</p></div></div>
+  <div class="stat-grid"><article class="stat-card"><span>Invited members</span><strong>{{ referral_count }}</strong></article><article class="stat-card"><span>Account status</span><strong class="status-text">Demo</strong></article></div>
+  <article class="referral-card"><span class="eyebrow">YOUR INVITATION CODE</span><div class="code-row"><strong id="referral-code">{{ user['referral_code'] }}</strong><button type="button" class="copy-button" data-copy="referral-code">Copy</button></div><p>Share this code with someone testing this local demo.</p></article>
+  <p class="notice-panel">Demo mode: this project does not process deposits, withdrawals, investments, or real earnings.</p>
+</section>
+{% endblock %}

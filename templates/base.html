@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#05080d">
+  <meta name="description" content="PIMSCO AI — a responsive local demo workspace.">
+  <title>{% block title %}PIMSCO AI{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar"><a class="brand-name" href="{{ url_for('index') }}">PIMSCO AI</a></header>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}<section class="flash-stack" aria-live="polite">
+      {% for category, message in messages %}<div class="flash flash-{{ category }}">{{ message }}</div>{% endfor %}
+    </section>{% endif %}
+  {% endwith %}
+  <main class="page-shell">{% block content %}{% endblock %}</main>
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>

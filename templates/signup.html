@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Create account | PIMSCO AI{% endblock %}
+{% block content %}
+<section class="auth-wrap signup-wrap">
+  <div class="auth-heading signup-heading"><h1>Create Your Account</h1><p>Your AI workspace starts here</p></div>
+  <form class="auth-form" method="post" action="{{ url_for('signup') }}">
+    <label for="mobile">Mobile Number</label>
+    <div class="input-shell"><i class="field-icon" data-lucide="phone" aria-hidden="true"></i><input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="07xx xxx xxx" maxlength="10" pattern="0[0-9]{9}" required></div>
+    <label for="invitation_code">Invitation Code</label>
+    <div class="input-shell"><i class="field-icon" data-lucide="ticket" aria-hidden="true"></i><input id="invitation_code" name="invitation_code" type="text" placeholder="Enter invitation code" maxlength="12" autocapitalize="characters" required></div>
+    <label for="password">Password</label>
+    <div class="input-shell"><i class="field-icon" data-lucide="lock" aria-hidden="true"></i><input id="password" name="password" type="password" autocomplete="new-password" placeholder="Create a password" minlength="8" required><button class="show-password" type="button" data-toggle-password="password" aria-label="Show password"><i data-lucide="eye" aria-hidden="true"></i></button></div>
+    <label for="confirm_password">Confirm Password</label>
+    <div class="input-shell"><i class="field-icon" data-lucide="lock" aria-hidden="true"></i><input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" placeholder="Confirm your password" minlength="8" required><button class="show-password" type="button" data-toggle-password="confirm_password" aria-label="Show password"><i data-lucide="eye" aria-hidden="true"></i></button></div>
+    <label class="terms-line"><input type="checkbox" name="terms" required><span>I agree to the <a href="{{ url_for('terms') }}">Terms &amp; Conditions</a> and <a href="{{ url_for('privacy') }}">Privacy Policy</a></span></label>
+    <button class="primary-button" type="submit">Create Account</button>
+  </form>
+  <p class="switch-auth">Already a member? <a href="{{ url_for('login') }}">Sign in</a></p>
+</section>
+{% endblock %}

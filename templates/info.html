@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}{{ page_title }} | PIMSCO AI{% endblock %}
+{% block content %}
+<section class="info-card"><p class="eyebrow">PIMSCO AI</p><h1>{{ page_title }}</h1><p>{{ page_text }}</p><a class="primary-button link-button" href="{{ url_for('signup') }}">Back to sign up</a></section>
+{% endblock %}
