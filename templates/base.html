@@ -12,7 +12,7 @@
 <body>
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
-  <header class="topbar"><a class="brand-name" href="{{ url_for('index') }}">PIMSCO AI</a></header>
+  <header class="topbar"><a class="brand-name" href="{{ url_for('index') }}" aria-label="PIMSCO AI home"><span class="brand-symbol" aria-hidden="true"><i data-lucide="trending-up"></i></span><span>PIMSCO <em>AI</em></span></a></header>
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}<section class="flash-stack" aria-live="polite">
       {% for category, message in messages %}<div class="flash flash-{{ category }}">{{ message }}</div>{% endfor %}
